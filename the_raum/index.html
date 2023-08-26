@@ -16,6 +16,7 @@
         #way-to-come {
             border-bottom: 1px solid #443d3d;
             font-weight: lighter;
+            padding-bottom: 60px;
         }
 
         #way-to-come-wrap {
@@ -35,7 +36,7 @@
         }
 
         #way-to-come .map_button button {
-            width: 300px;
+            width: 100%;
             margin: 10px auto;
             display: flex;
             align-items: center;
@@ -90,6 +91,51 @@
             color: #443d3d;
             padding-bottom: 15px;
             display: inline-flex;
+        }
+
+        #way-to-come .map_text .public_tran li:last-child a:last-child {
+            padding-bottom: 0;
+        }
+
+
+        #photo {
+            border-bottom: 1px solid #443d3d;
+            font-weight: lighter;
+            padding: 60px 20px;
+        }
+
+        #photo h2 {
+            margin-bottom: 25px;
+            color: #443d3d;
+            text-align: center;
+            font-weight: lighter;
+        }
+        
+        #photo ul {
+            display: inline-block;
+            width: 100%;
+        }
+
+        #photo ul li {
+            width: calc((100% - 20px) / 3);
+            height: 100px;
+            background-color: #fff;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            float: left;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #photo ul li:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        #photo ul li:nth-child(7),
+        #photo ul li:nth-child(8),
+        #photo ul li:nth-child(9) {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -201,6 +247,21 @@
                         </li>
                     </ul>
                 </div>
+        </section>
+
+        <section id="photo">
+            <h2>우리, 결혼해요!</h2>
+            <ul>
+                <li style="background-image: url('images/01.jpg');" class="img01"></li>
+                <li style="background-image: url('images/02.jpg');" class="img02"></li>
+                <li style="background-image: url('images/03.jpg');" class="img03"></li>
+                <li style="background-image: url('images/04.jpg');" class="img04"></li>
+                <li style="background-image: url('images/05.jpg');" class="img05"></li>
+                <li style="background-image: url('images/06.jpg');" class="img06"></li>
+                <li style="background-image: url('images/07.jpg');" class="img07"></li>
+                <li style="background-image: url('images/08.jpg');" class="img08"></li>
+                <li style="background-image: url('images/09.png');" class="img09"></li>
+            </ul>
         </section>
     </article>
 </body>
