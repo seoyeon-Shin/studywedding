@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 청첩장</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="css/import.css" rel="stylesheet" type="text/css">
+    <script>
+       $(document).ready(function(){
+           console.log("ok")
+       })
+    </script>
+
+    <style>
+        #way-to-come {
+            border-bottom: 1px solid #443d3d;
+            font-weight: lighter;
+        }
+
+        #way-to-come-wrap {
+
+        }
+
+        #way-to-come .map_wrap {
+            overflow: hidden;
+            height: 250px;
+        }
+
+        #way-to-come h2 {
+            margin-bottom: 25px;
+            color: #443d3d;
+            text-align: center;
+            font-weight: lighter;
+        }
+
+        #way-to-come .map_button button {
+            width: 300px;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            background-color: #b3a2a2;
+            border: none;
+        }
+
+        #way-to-come .map_button button a {
+            color: #fff;
+        }
+
+
+
+
+
+        /* =========text */
+
+        #way-to-come .map_text {
+            padding: 20px;
+            text-align: left;
+        }
+
+        #way-to-come .map_text .address {
+            margin: 0 20px 40px 0;
+            color: #443d3d;
+        }
+
+        
+
+        #way-to-come .map_text .address li:last-child {
+            padding-top: 5px;
+            color: #827777;
+        }
+
+        #way-to-come .map_text .address li span {
+            margin-right: 20px;
+            color: #968c8c;
+        }
+
+        #way-to-come .map_text .public_tran {
+            font-size: 14px;
+        }
+
+        #way-to-come .map_text .public_tran li a:first-child {
+            width: 20%;
+            color: #968c8c;
+        }
+
+        #way-to-come .map_text .public_tran li a:last-child {
+            width: auto;
+            color: #443d3d;
+            padding-bottom: 15px;
+            display: inline-flex;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <div>
+                <p>SON MINSU</p>
+                <img src="images/logo_and.png" alt="">
+                <p>IM LALA</p>
+            </div>
+        </header>
+
+        <section id="main">
+            <figure>
+                <img src="images/img_main.jpeg" alt="">
+                <figcaption>
+                    <p>The Raum</p>
+                    <p>May 21 2023 PM 2:00</p>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="intro">
+            <p class="top_text">
+                2년은 친한 친구로 10년은 사랑하는 연인으로<br>
+                앞으로 평생은 부부로 함께 하고자 합니다.<br>
+                엔조이커플 드디어 결혼합니다!
+            </p>
+            <br>
+            <p class="bottom_text">
+                눈치 보지 말고 비교하지 말고<br>
+                즐기면서 영원히 사랑하겠습니다.<br>
+                축복의 자리에 오셔서 함께 즐겨주시기 바랍니다.
+            </p>
+            <img src="images/img_sub.jpg" alt="">
+            <div class="name_text">
+                <p>
+                    <span>정옥순의 차남</span>신랑 손민수
+                </p>
+                <p>
+                    <span>강순자의 장녀</span>신부 임라라
+                </p>
+            </div>
+            <div class="contact">
+                <span>
+                    <a href="tel:010-3443-0544">혼주에게 연락하기</a>
+                </span>
+            </div>
+        </section>
+
+        <section id="way-to-come">
+            <div class="way-to-come-wrap">
+                <h2>오시는 길</h2>
+                <div class="map_wrap">
+                    <div id="daumRoughmapContainer1693027677548" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                    <!--
+                        2. 설치 스크립트
+                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                    -->
+                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                    <!-- 3. 실행 스크립트 -->
+                    <script charset="UTF-8">
+                        let mapWidth = $('article').width();
+                        $(window).resize(() => {
+                            mapWidth = $('article').width();
+                        })
+
+                        new daum.roughmap.Lander({
+                            "timestamp" : "1693027677548",
+                            "key" : "2fyme",
+                            "mapWidth" : mapWidth,
+                            "mapHeight" : "250"
+                        }).render();
+                    </script>
+                </div>
+
+                <div class="map_button">
+                    <button><a href="http://kko.to/-M6s9FTew8" target="_blank">지도 바로가기</a></button>
+                </div>
+                
+                <div class="map_text">
+                    <ul class="address">
+                        <li>서울특별시 강남구 언주로 564</li>
+                        <li>The Raum 2F Grass Garden</li>
+                    </ul>
+                    
+                    <ul class="public_tran">
+                        <li>
+                            <a>지하철</a>
+                            <a>9호선 언주역 도보 10분</a>
+                        </li>
+                        <li>
+                            <a>버스</a>
+                            <a>
+                                402번, 405번, 411번, 501번 <br>
+                                언주로 사거리 정류장 <br>
+                                하차 후 도보 3분
+                            </a>
+                        </li>
+                        <li>
+                            <a>주차</a>
+                            <a>
+                                건물 내 1,400대 주차 가능 <br>
+                                2시간 무료
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </section>
+    </article>
+</body>
+</html>
