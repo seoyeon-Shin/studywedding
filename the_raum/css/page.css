@@ -1,5 +1,5 @@
 article {
-    width: 320px;
+    max-width: 420px;
     background-color: #efe6df;
     margin: 0 auto;
     font-family: 'RIDIBatang';
@@ -129,3 +129,81 @@ header div p {
 }
 
 /* ========== intro 끝 ========== */
+
+
+
+/* ========== way-to-come 시작 ========== */
+
+#way-to-come {
+    border-bottom: 1px solid #443d3d;
+    font-weight: lighter;
+    padding-bottom: 60px;
+}
+
+#way-to-come .map_wrap {
+    overflow: hidden;
+    height: 250px;
+}
+
+#way-to-come h2 {
+    margin-bottom: 25px;
+    color: #443d3d;
+    text-align: center;
+    font-weight: lighter;
+}
+
+#way-to-come .map_button button {
+    width: 100%;
+    /* margin: 10px auto; */
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: #e0cece;
+    border: none;
+}
+
+#way-to-come .map_button button a {
+    color: #fff;
+}
+
+#way-to-come .map_text {
+    padding: 20px;
+    text-align: left;
+}
+
+#way-to-come .map_text .address {
+    margin: 0 20px 40px 0;
+    color: #443d3d;
+}
+
+#way-to-come .map_text .address li:last-child {
+    padding-top: 5px;
+    color: #827777;
+}
+
+#way-to-come .map_text .address li span {
+    margin-right: 20px;
+    color: #968c8c;
+}
+
+#way-to-come .map_text .public_tran {
+    font-size: 14px;
+}
+
+#way-to-come .map_text .public_tran li a:first-child {
+    width: 20%;
+    color: #968c8c;
+}
+
+#way-to-come .map_text .public_tran li a:last-child {
+    width: auto;
+    color: #443d3d;
+    padding-bottom: 15px;
+    display: inline-flex;
+}
+
+#way-to-come .map_text .public_tran li:last-child a:last-child {
+    padding-bottom: 0;
+}
+
+/* ========== way-to-come 끝 ========== */

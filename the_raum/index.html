@@ -3,103 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>모바일 청첩장</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="css/import.css" rel="stylesheet" type="text/css">
     <script>
-       $(document).ready(function(){
-           console.log("ok")
+       $(function(){
+        $('#photo li').click(function(){
+            $('#cover').css('display','block');
+            $('#cover figure img').attr('src','images/'+$(this).attr('class'));
+            $('#cover div').css('height',$('#cover figure img').css('height'));
+        })
+    
+        $('#cover span img').click(function(){
+            $('#cover').css('display','none');
+        })
+
+        $('#account .man h3 span').click(function(){
+            if ($('#account .man p').css('display')=== 'block') {
+                $('#account .man p').slideUp();
+                $('#account .man h3 span').css('transform','scaleY(1) rotate(-135deg)');
+            } else { 
+                $('#account .man p').slideDown();
+                $('#account .man h3 span').css('transform','rotate(45deg)');
+            }
+        })
+
+        $('#account .girl h3 span').click(function(){
+            if ($('#account .girl p').css('display')=== 'block') {
+                $('#account .girl p').slideUp();
+                $('#account .girl h3 span').css('transform','scaleY(1) rotate(-135deg)');
+            } else { 
+                $('#account .girl p').slideDown();
+                $('#account .girl h3 span').css('transform','rotate(45deg)');
+            }
+        })
        })
     </script>
 
     <style>
-        #way-to-come {
-            border-bottom: 1px solid #443d3d;
-            font-weight: lighter;
-            padding-bottom: 60px;
-        }
-
-        #way-to-come-wrap {
-
-        }
-
-        #way-to-come .map_wrap {
-            overflow: hidden;
-            height: 250px;
-        }
-
-        #way-to-come h2 {
-            margin-bottom: 25px;
-            color: #443d3d;
-            text-align: center;
-            font-weight: lighter;
-        }
-
-        #way-to-come .map_button button {
-            width: 100%;
-            margin: 10px auto;
-            display: flex;
-            align-items: center;
-            height: 40px;
-            background-color: #b3a2a2;
-            border: none;
-        }
-
-        #way-to-come .map_button button a {
-            color: #fff;
-        }
-
-
-
-
-
-        /* =========text */
-
-        #way-to-come .map_text {
-            padding: 20px;
-            text-align: left;
-        }
-
-        #way-to-come .map_text .address {
-            margin: 0 20px 40px 0;
-            color: #443d3d;
-        }
-
-        
-
-        #way-to-come .map_text .address li:last-child {
-            padding-top: 5px;
-            color: #827777;
-        }
-
-        #way-to-come .map_text .address li span {
-            margin-right: 20px;
-            color: #968c8c;
-        }
-
-        #way-to-come .map_text .public_tran {
-            font-size: 14px;
-        }
-
-        #way-to-come .map_text .public_tran li a:first-child {
-            width: 20%;
-            color: #968c8c;
-        }
-
-        #way-to-come .map_text .public_tran li a:last-child {
-            width: auto;
-            color: #443d3d;
-            padding-bottom: 15px;
-            display: inline-flex;
-        }
-
-        #way-to-come .map_text .public_tran li:last-child a:last-child {
-            padding-bottom: 0;
-        }
-
-
         #photo {
-            border-bottom: 1px solid #443d3d;
             font-weight: lighter;
             padding: 60px 20px;
         }
@@ -118,7 +60,7 @@
 
         #photo ul li {
             width: calc((100% - 20px) / 3);
-            height: 100px;
+            height: 150px;
             background-color: #fff;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -137,10 +79,124 @@
         #photo ul li:nth-child(9) {
             margin-bottom: 0;
         }
+
+        #cover {
+            width: 100%;
+            height: 100vh;
+            max-width: 420px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            position: fixed;
+            display: none;
+        }
+
+        #cover figure {
+            background-color: #fff;
+        }
+
+        #cover div {
+            width: 70%;
+            margin: auto;
+            height: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #cover figure img {
+            border: 5px solid #fff;
+            box-sizing: border-box;
+        }
+
+        #cover span {
+            display: inline-block;
+            width: 25px;
+            position: absolute;
+            right: -10px;
+            top: -30px;
+        }
+
+        #cover span img {
+            filter: invert(100%) sepia(86%) saturate(0%) hue-rotate(255deg) brightness(104%) contrast(101%);
+        }
+
+
+        #account {
+            padding: 45px 20px;
+            box-sizing: border-box;
+        }
+
+        #account h2 {
+            margin-bottom: 25px;
+            color: #443d3d;
+            text-align: center;
+            font-weight: lighter;
+        }
+
+        #account > p {
+            margin-bottom: 35px;        
+            font-size: 12px;
+            color: #443d3d;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .account_slide {
+            margin-bottom: 15px;
+        }
+
+        .account_slide h3 {
+            height: 40px;
+            padding: 0 20px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: lighter;
+            background-color: #dfd1d1;
+            position: relative;
+        }
+
+        .account_slide h3 span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #443d3d;
+            float: right;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            border-top: 0;
+            border-left: 0;
+            transform: scaleY(1) rotate(45deg);
+            transform-origin: center 9px;
+            transition: 0.3s;
+        }
+
+        .account_slide p {
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: #fff;
+            font-size: 11px;
+            color: #443d3d;
+            line-height: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <article>
+        <div id="cover">
+            <div>
+                <span>
+                    <img src="images/x.png" alt="">
+                </span>
+                <figure>
+                    <img src="images/01.jpg" alt="">
+                </figure>
+            </div>
+        </div>
         <header>
             <div>
                 <p>SON MINSU</p>
@@ -252,16 +308,52 @@
         <section id="photo">
             <h2>우리, 결혼해요!</h2>
             <ul>
-                <li style="background-image: url('images/01.jpg');" class="img01"></li>
-                <li style="background-image: url('images/02.jpg');" class="img02"></li>
-                <li style="background-image: url('images/03.jpg');" class="img03"></li>
-                <li style="background-image: url('images/04.jpg');" class="img04"></li>
-                <li style="background-image: url('images/05.jpg');" class="img05"></li>
-                <li style="background-image: url('images/06.jpg');" class="img06"></li>
-                <li style="background-image: url('images/07.jpg');" class="img07"></li>
-                <li style="background-image: url('images/08.jpg');" class="img08"></li>
-                <li style="background-image: url('images/09.png');" class="img09"></li>
+                <li class="01.jpg" style="background-image: url('images/01.jpg');"></li>
+                <li class="02.jpg" style="background-image: url('images/02.jpg');"></li>
+                <li class="03.jpg" style="background-image: url('images/03.jpg');"></li>
+                <li class="04.jpg" style="background-image: url('images/04.jpg');"></li>
+                <li class="05.jpg" style="background-image: url('images/05.jpg');"></li>
+                <li class="06.jpg" style="background-image: url('images/06.jpg');"></li>
+                <li class="07.jpg" style="background-image: url('images/07.jpg');"></li>
+                <li class="08.jpg" style="background-image: url('images/08.jpg');"></li>
+                <li class="09.png" style="background-image: url('images/09.png');"></li>
             </ul>
+        </section>
+
+        <section id="account">
+            <h2>마음 전하실 곳</h2>
+            <p>
+                참석이 어려우신 분들을 위해<br>
+                계좌번호를 기재하였습니다.<br>
+                양해 부탁드립니다.
+            </p>
+            <div class="account_slide man">
+                <h3>
+                    신랑측
+                    <span></span>
+                </h3>
+                <p>
+                    신랑계좌 <br>
+                    손민수 기업 02011211025378 <br>
+                    신랑 혼주 계좌 <br>
+                    정옥순 우리 15122118353697
+                </p>
+
+              
+            </div>
+
+            <div class="account_slide girl">
+                <h3>
+                    신부측
+                    <span></span>
+                </h3>
+                <p style="margin-bottom: 0;">
+                    신부계좌 <br>
+                    임라라 우리 02011211025378 <br>
+                    신부 혼주 계좌 <br>
+                    강순자 국민 15122118353697
+                </p>
+            </div>
         </section>
     </article>
 </body>
